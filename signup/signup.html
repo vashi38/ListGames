@@ -1,0 +1,25 @@
+<div class="col-lg-4 col-lg-offset-4 well login-form">
+  <form class="" name="signup_form">
+    <center><h3>SignUp</h3></center>
+    <table class="table table-stripped">
+      <tr>
+        <td>Full Name: </td>
+        <td><input type="text" name="" value="" placeholder="Full name" class="textbox" ng-model="fullName" required></td>
+      </tr>
+      <tr>
+        <td>Username: </td>
+        <td><input type="text" name="" value="" placeholder="Username" class="textbox" ng-model = "username" required></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="password" name="" value="" placeholder="Password" class="textbox" ng-model = "password1" required></td>
+      </tr>
+      <tr>
+        <td>Re Enter Password:</td>
+        <td><input type="password" name="" value="" placeholder="Password" class="textbox" ng-model = "password2" required></td>
+      </tr>
+    </table>
+    <center><input type="button" name="" value="signup" ng-click = "signupCtrl.signup()" class="btn btn-success" ng-disabled="signup_form.$invalid"></center><br>
+    <center>Have already Account? <a ng-click = "signupCtrl.switchtologin()">Login</a></center>
+  </form>
+</div>

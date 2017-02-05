@@ -1,0 +1,54 @@
+<div>
+
+	<b class="user" ng-show="!games.showlogin"><i class="user-logo glyphicon glyphicon-user"></i>Welcome Shivanand</b>
+	<input class = "btn btn-primary login"  type="button" name="Login" value="Login" ng-show = "games.showlogin" ng-click = "games.login()">
+	<input class = "btn btn-primary login"  type="button" name="Logout" value="Logout" ng-show = "!games.showlogin" ng-click = "games.logout()">
+
+</div>
+<div class="searchbox">
+
+		<div class="input-group input-group-lg search" >
+			<span class="input-group-addon "><i class="glyphicon glyphicon-search"></i></span>
+			<input class="form-control " type="text" name="" placeholder="Search (by Title)"  ng-model = "globalSearch"/>
+			<span class="close-btn" ng-click = "globalSearch = ''" ><i class=" glyphicon glyphicon-remove-circle"></i></span>
+		</div>
+		<span style="float:left"><i  class="glyphicon glyphicon-filter large" ></i></span>
+	<div class="sortBy">
+		<label>Sort By: </label>
+		<select id ="sortBy" class="" name="sort-date" ng-model="sort">
+			<option value="0">Ascending</option>
+			<option value="1">Descending</option>
+		</select>
+
+	</div>
+</div>
+
+
+<div class="well my-well col-lg-10 col-lg-offset-1">
+
+	<div class="wraper" ng-repeat = "game in games.object | filter:globalSearch | orderBy:'title ':sort">
+		<div class="game col-sm-12" >
+			<div class="game-info">
+				<img src="images/game-logo.png" alt="" class="game-logo">
+				<div style="height:100">
+					<span class="star glyphicon glyphicon-star" ng-style = "game.mystyle"></span>
+					<h4 class="game-title">{{game.title}}</h4>
+					<label class="game-playstation">{{game.platform}}</label>
+				</div>
+			</div>
+			<br><hr>
+			<div class="game-info">
+				<label class="game-genre">Genre: {{game.genre}}</label>
+				<label class="game-score">{{game.score}}</label>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-12 col-sm-12">
+		<center>
+			<input type="button" class="btn btn-primary" name="" value="Previous" ng-click = "games.pre()">
+			<input type="button" class="btn btn-primary" name="" value="Next" ng-click = "games.next()">
+		</center>
+
+	</div>
+
+</div>

@@ -1,0 +1,130 @@
+.head{
+	position:fixed;
+	z-index:1;
+	background-color: white;
+	width:100%;
+	height: 100px;;
+}
+.logo{
+	padding: 20;
+}
+.login{
+	position: fixed;
+	top: 50;
+	right: 100;
+	width: 150;
+	z-index: 2;
+}
+}
+.games-list{
+position: absolute;
+top: 100;
+background-color: grey;
+height: 100;
+}
+.my-well{
+	position: absolute;
+	top: 200;
+	/*background-image: url('../images/back.png');*/
+	/*width: 100%;
+	height: 100%;*/
+}
+.game{
+	padding: 0;
+	background-color: white;
+	border: solid;
+	border-color: rgba(128, 128, 128, 0.72);
+	border-radius: 25px;
+
+	width:400;
+
+}
+.game-logo{
+	width:100;
+	height: 100;
+	float: left;
+}
+.game-title{
+	padding-left: 118;
+	font-size: 20;
+}
+.game-playstation{
+	padding-left: 20;
+	padding-top: 0;
+	font-size: 15;
+	color: rgba(128, 128, 128, 0.69);
+}
+.game-info{
+	padding: 0 20 0 20;
+}
+hr{
+	padding-top: 5;
+	border-width: 5;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+.game-genre{
+	padding: 5 20 5 20;
+	color: rgba(128, 128, 128, 0.69);
+}
+.game-score{
+	color: orange;
+	float:right;
+	padding: 5 5 5 20;
+}
+.star{
+ padding: 5 10 20 20;
+	float: right;
+}
+
+.searchbox{
+  position: fixed;
+  top:100;
+  left:0;
+  z-index: 10;
+  background-color: #f1f1f1;
+}
+.large{
+font-size: 40;
+padding: 15;
+}
+.close-btn {
+    position: absolute;
+    right: 24px;
+    z-index: 10;
+    top: 22px;
+    cursor: pointer;
+}
+.btn{
+		width: 100;
+}
+.search{
+  width: 65%;
+  padding: 10;
+  margin: 10 10 0 20;
+  float: left;
+}
+
+.sortBy{
+    padding:30;
+    float:left;
+}
+.wraper{
+	width:400;
+	height: 200;
+	float: left;
+	margin: 35 0 0 10;
+}
+.user{
+	position: fixed;
+    z-index: 4;
+    right: 500;
+    top: 53px;
+    font-size: 23px;
+}
+.user-logo{
+	padding: 5;
+}
+input.ng-invalid{
+	border-color:red;
+}

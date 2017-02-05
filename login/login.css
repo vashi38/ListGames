@@ -1,0 +1,12 @@
+.login-form{
+  position: absolute;
+  top:150;
+}
+.textbox{
+  width: 250;
+height: 40px;
+padding: 5 0 5 10px;
+border: solid;
+border-width: 1;
+border-radius: 10px;
+}

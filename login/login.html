@@ -1,0 +1,17 @@
+<div class="col-lg-4 col-lg-offset-4 well login-form">
+  <form class="" name="login_form1" >
+    <center><h3>Login</h3></center>
+    <table class="table table-stripped">
+      <tr>
+        <td>Username: </td>
+        <td><input type="text" name="" value="" placeholder="Username" class="textbox" required></td>
+      </tr>
+      <tr>
+        <td>Password: </td>
+        <td><input type="password" name="" value="" placeholder="Password" class="textbox" required></td>
+      </tr>
+    </table>
+    <center><input type="button" name="" value="Login" ng-click = "loginCtrl.login()" class="btn btn-success" ng-disabled="login_form1.$invalid"></center><br>
+    <center>Don't have account? <a ng-click = "loginCtrl.switchtologin()">SignUp</a></center>
+  </form>
+</div>
