@@ -11,8 +11,10 @@ var express    = require("express");
  });
  var app = express();
 
- app.use(bodyParser.json());
+ // app.use(bodyParser.json());
  app.use(function(req, res, next) {
+   res.header("Access-Control-Allow-Origin", "*");
+   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
    next();
  });
 connection.connect(function(err){
@@ -35,8 +37,6 @@ connection.connect(function(err){
 
  });
  app.post('/login', urlencodedParser, function(req,res){
-   res.header("Access-Control-Allow-Origin", "*");
-   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     username = req.body.username;
     password = req.body.password;
