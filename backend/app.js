@@ -1,4 +1,5 @@
 var express    = require("express");
+var cors = require('cors');
  var mysql      = require('mysql');
  var bodyParser = require('body-parser');
  var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -10,13 +11,14 @@ var express    = require("express");
    database : 'test'
  });
  var app = express();
-
+app.use(cors());
  // app.use(bodyParser.json());
- app.use(function(req, res, next) {
-   res.header("Access-Control-Allow-Origin", "*");
-   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-   next();
- });
+ // app.use(function(req, res, next) {
+ //   res.header("Access-Control-Allow-Origin", "*");
+ //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+ //   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+ //    next();
+ // });
 connection.connect(function(err){
  if(!err) {
      console.log("Database is connected ... \n\n");
@@ -25,9 +27,9 @@ connection.connect(function(err){
  }
  });
 
- app.get("/",function(req,res){
+ app.get("/",function(req, res, next){
  connection.query('SELECT * from `table 8`', function(err, rows, fields) {
- connection.end();
+ // connection.end();
  res.send(rows);
    if (!err)
      console.log('The solution is: ', rows);
@@ -36,12 +38,12 @@ connection.connect(function(err){
    });
 
  });
- app.post('/login', urlencodedParser, function(req,res){
+ app.post('/login', urlencodedParser, cors(), function(req, res, next){
 
     username = req.body.username;
     password = req.body.password;
     connection.query('SELECT * from `users` where username = "'+username+'" ', function(err, rows, fields) {
-    connection.end();
+   //  connection.end();
     res.send(rows);
      if (!err)
         console.log('The solution is: ', rows);
@@ -50,7 +52,7 @@ connection.connect(function(err){
      });
 });
 
-app.post('/signup', urlencodedParser, function(req, res){
+app.post('/signup', urlencodedParser, function(req, res, next){
    fullname = req.body.fullName;
    username = req.body.username;
    password = req.body.password;

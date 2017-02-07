@@ -83,6 +83,7 @@ hr{
   left:0;
   z-index: 10;
   background-color: #f1f1f1;
+	width: 100%;
 }
 .large{
 font-size: 40;
