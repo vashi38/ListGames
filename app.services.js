@@ -14,27 +14,28 @@ app.service("APIServices",function($http,$state){
 	};
 
 	this.getUser = function(user){
+		// console.log(user);
 		return $http({
 			method:'POST',
-			url:'http://127.0.0.1/login',
+			url:'http://127.0.0.1:3000/login',
 			data:{
-				username: user.username,
-				password: user.password
+				"username": user.username,
+				"password": user.password
 			}
 		}).then(function (response) {
 			console.log(response.data);
 			return (response.data);
 		});
-	}
+	};
 
-	this.addUser = function(){
+	this.addUser = function(user){
 		return $http({
 			method:'POST',
-		url:'http://127.0.0.1/addUser',
+		url:'http://127.0.0.1:3000/signup',
 		data:{
-			username: user.username,
-			password: user.password,
-			fullName: user.fullName
+			"username": user.username,
+			"password": user.password,
+			"fullName": user.fullName
 		}
 	}).then(function (response) {
 		console.log(response);

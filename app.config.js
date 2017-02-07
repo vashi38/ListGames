@@ -6,7 +6,10 @@ app.config(function($stateProvider,$urlRouterProvider){
 		url:'/games',
 		templateUrl:'games/games.html',
 		controller:'showGames',
-		controllerAs:'games'
+		controllerAs:'games',
+		params:{
+			"user": ""
+		}
 	})
 	.state('login',{
 		url:'/login',

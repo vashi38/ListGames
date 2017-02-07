@@ -4,11 +4,11 @@
     <table class="table table-stripped">
       <tr>
         <td>Username: </td>
-        <td><input type="text" name="" value="" placeholder="Username" class="textbox" required></td>
+        <td><input type="text" name="" value="" placeholder="Username" class="textbox" ng-model = "loginCtrl.username" required></td>
       </tr>
       <tr>
         <td>Password: </td>
-        <td><input type="password" name="" value="" placeholder="Password" class="textbox" required></td>
+        <td><input type="password" name="" value="" placeholder="Password" class="textbox" ng-model = "loginCtrl.password" required></td>
       </tr>
     </table>
     <center><input type="button" name="" value="Login" ng-click = "loginCtrl.login()" class="btn btn-success" ng-disabled="login_form1.$invalid"></center><br>

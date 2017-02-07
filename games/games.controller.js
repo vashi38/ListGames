@@ -6,6 +6,10 @@
 		var vm = this;
 		var start=1,end=9;
 		vm.showlogin = true;
+		if($state.params.user != ""){
+			vm.showlogin = false;
+			vm.user = $state.params.user;
+		}
 		vm.display = function(s, e){
 			start = s;
 			end = e;

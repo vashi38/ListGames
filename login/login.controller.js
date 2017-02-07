@@ -12,7 +12,14 @@
       user.username = vm.username;
       user.password = vm.password;
       APIServices.getUser(user).then(function(response){
-
+					if(response == "false"){
+            $window.alert("Username/Password incorrect");
+            vm.username = "";
+            vm.password = "";
+					}
+					else{
+						$state.go("games",{"user":response});
+					}
       })
     }
   });

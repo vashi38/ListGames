@@ -1,6 +1,6 @@
 <div>
 
-	<b class="user" ng-show="!games.showlogin"><i class="user-logo glyphicon glyphicon-user"></i>Welcome Shivanand</b>
+	<b class="user" ng-show="!games.showlogin"><i class="user-logo glyphicon glyphicon-user"></i>Welcome {{games.user}}</b>
 	<input class = "btn btn-primary login"  type="button" name="Login" value="Login" ng-show = "games.showlogin" ng-click = "games.login()">
 	<input class = "btn btn-primary login"  type="button" name="Logout" value="Logout" ng-show = "!games.showlogin" ng-click = "games.logout()">
 
