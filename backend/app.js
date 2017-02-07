@@ -1,5 +1,5 @@
 var express    = require("express");
-var cors = require('cors');
+// var cors = require('cors');
  var mysql      = require('mysql');
  var bodyParser = require('body-parser');
  var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -11,14 +11,14 @@ var cors = require('cors');
    database : 'test'
  });
  var app = express();
-app.use(cors());
+// app.use(cors());
  // app.use(bodyParser.json());
- // app.use(function(req, res, next) {
- //   res.header("Access-Control-Allow-Origin", "*");
- //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
- //   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
- //    next();
- // });
+ app.use(function(req, res, next) {
+   res.header("Access-Control-Allow-Origin", "*");
+   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    next();
+ });
 connection.connect(function(err){
  if(!err) {
      console.log("Database is connected ... \n\n");
@@ -38,7 +38,7 @@ connection.connect(function(err){
    });
 
  });
- app.post('/login', urlencodedParser, cors(), function(req, res, next){
+ app.post('/login', urlencodedParser, function(req, res, next){
 
     username = req.body.username;
     password = req.body.password;
